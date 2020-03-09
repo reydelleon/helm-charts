@@ -34,7 +34,7 @@ service:
   port: 80
 
 ingress:    
-  host: sonarr.litlelodge.local
+  host: sonarr.littlelodge.local
   path: /
 
 resources:
