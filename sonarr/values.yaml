@@ -21,14 +21,13 @@ probes:
     failureThreshold: 3
     timeoutSeconds: 1
 
-imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
 environment:
   puid: 1000
   pgid: 1000
-  timeZonw: "America/New York"
+  timeZonw: America/New York
 
 service:
   type: ClusterIP
