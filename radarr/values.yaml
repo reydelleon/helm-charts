@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: linuxserver/sonarr
+  repository: linuxserver/radarr
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -34,7 +34,7 @@ service:
   port: 80
 
 ingress:    
-  host: sonarr.littlelodge.local
+  host: radarr.littlelodge.local
   path: /
 
 resources:

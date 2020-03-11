@@ -1,6 +1,6 @@
 apiVersion: v2
-name: sonarr
-description: A UseNet client to manage TV shows downloads
+name: radarr
+description: A UseNet client to manage movie downloads
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -20,10 +20,10 @@ version: 1.0.0
 # incremented each time you make changes to the application.
 appVersion: 1.0.0
 
-icon: https://avatars1.githubusercontent.com/u/1082903?s=400&v=4
+icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/radarr.png
 sources:
-  - https://hub.docker.com/r/linuxserver/sonarr/
-  - https://sonarr.tv/
+  - https://hub.docker.com/r/linuxserver/radarr/
+  - https://radarr.video/
 
 maintainers:
   - name: Reydel Leon Machado
