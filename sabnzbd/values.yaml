@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: linuxserver/radarr
+  repository: linuxserver/sabnzbd
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -17,9 +17,6 @@ probes:
     failureThreshold: 3
     timeoutSeconds: 1
 
-nameOverride: ""
-fullnameOverride: ""
-
 environment:
   puid: 1000
   pgid: 1000
@@ -27,10 +24,11 @@ environment:
 
 service:
   type: ClusterIP
-  port: 80
-
+  httpPort: 80
+  httpsPort: 443
+  
 ingress:    
-  host: radarr.littlelodge.local
+  host: sabnzbd.littlelodge.local
   path: /
 
 resources:
@@ -39,8 +37,8 @@ resources:
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   limits:
-    cpu: 100m
+    cpu: 150m
     memory: 256Mi
   requests:
-    cpu: 50m
+    cpu: 100m
     memory: 128Mi
