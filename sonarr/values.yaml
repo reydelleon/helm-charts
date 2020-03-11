@@ -27,7 +27,7 @@ fullnameOverride: ""
 environment:
   puid: 1000
   pgid: 1000
-  timeZonw: America/New York
+  timeZone: America/New York
 
 service:
   type: ClusterIP
