@@ -38,7 +38,7 @@ spec:
               port: http
               httpHeaders:
                 - name: Authorization
-                  value: Basic bnpiZ2V0OnRlZ2J6bjY3ODk=
+                  value: Basic bnpiZ2V0OllINyVmY2wjcz9iQ1lHJnM=
             initialDelaySeconds: {{ .Values.probes.liveness.initialDelaySeconds }}
             failureThreshold: {{ .Values.probes.liveness.failureThreshold }}
             timeoutSeconds: {{ .Values.probes.liveness.timeoutSeconds }}
@@ -48,7 +48,7 @@ spec:
               port: http
               httpHeaders:
                 - name: Authorization
-                  value: Basic bnpiZ2V0OnRlZ2J6bjY3ODk=
+                  value: Basic bnpiZ2V0OllINyVmY2wjcz9iQ1lHJnM=
             initialDelaySeconds: {{ .Values.probes.readiness.initialDelaySeconds }}
             failureThreshold: {{ .Values.probes.readiness.failureThreshold }}
             timeoutSeconds: {{ .Values.probes.readiness.timeoutSeconds }}
