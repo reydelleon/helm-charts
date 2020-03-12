@@ -27,7 +27,7 @@ service:
   port: 80
   
 ingress:    
-  host: sabnzbd.littlelodge.local
+  host: sabnzdb.littlelodge.local
   path: /
 
 resources:
@@ -36,8 +36,8 @@ resources:
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   limits:
-    cpu: 150m
-    memory: 256Mi
+    cpu: 400m
+    memory: 512Mi
   requests:
-    cpu: 100m
-    memory: 128Mi
+    cpu: 200m
+    memory: 256Mi
