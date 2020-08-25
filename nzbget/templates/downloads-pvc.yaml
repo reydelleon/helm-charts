@@ -12,7 +12,7 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: "/Volumes/DATA/Media/usenet-downloads"
+    path: "/var/lib/media/plex-library/Downloads"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim

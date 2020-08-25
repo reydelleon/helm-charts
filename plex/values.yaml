@@ -7,7 +7,7 @@ replicaCount: 1
 deploymentStrategy: Recreate
 
 image:
-  repository: linuxserver/nzbget
+  repository: linuxserver/plex
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -24,14 +24,13 @@ probes:
 environment:
   puid: 1000
   pgid: 1000
-  timeZone: America/New York
 
 service:
   type: ClusterIP
   port: 80
 
 ingress:    
-  host: nzbget.le.local
+  host: plex.le.local
   path: /
 
   resources:
@@ -40,8 +39,8 @@ ingress:
     # resources, such as Minikube. If you do want to specify resources, uncomment the following
     # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
     limits:
-      cpu: 1000m
-      memory: 640Mi
+      cpu: 2000m
+      memory: 3Gi
     requests:
-      cpu: 100m
-      memory: 256Mi
+      cpu: 500m
+      memory: 1Gi

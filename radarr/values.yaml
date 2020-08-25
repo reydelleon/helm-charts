@@ -27,7 +27,7 @@ service:
   port: 80
 
 ingress:    
-  host: radarr.littlelodge.local
+  host: radarr.le.local
   path: /
 
 resources:

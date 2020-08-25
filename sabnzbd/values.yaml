@@ -27,7 +27,7 @@ service:
   port: 80
   
 ingress:    
-  host: sabnzdb.littlelodge.local
+  host: sabnzdb.le.local
   path: /
 
 resources:

@@ -12,7 +12,7 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: "/Users/reydelleon/.config/Radarr"
+    path: "/var/lib/.radarr"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim

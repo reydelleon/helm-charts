@@ -12,7 +12,7 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: "/Users/reydelleon/.config/Sonarr"
+    path: "/var/lib/.sonarr"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
