@@ -30,7 +30,7 @@ spec:
             - name: VERSION
               value: docker
             - name: PLEX_CLAIM
-              value: claim-2UszMhbmP1HQpTXU8uMT
+              value: claim-A4DtGDKTE9b_xSN5nWwH
           ports:
             - name: http
               containerPort: 32400
@@ -38,8 +38,8 @@ spec:
           volumeMounts:
             - mountPath: /media
               name: media
-          resources:
-            {{- toYaml .Values.resources | nindent 12 }}
+          # resources:
+          #   {{- toYaml .Values.resources | nindent 12 }}
       volumes:
         - name: media
           persistentVolumeClaim:

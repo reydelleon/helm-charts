@@ -7,7 +7,7 @@ replicaCount: 1
 deploymentStrategy: Recreate
 
 image:
-  repository: linuxserver/plex
+  repository: linuxserver/mariadb
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -24,19 +24,21 @@ probes:
 environment:
   puid: 1000
   pgid: 1000
+  rootPassword: rootPassword
+  timeZone: America/New York
 
 service:
   type: ClusterIP
-  port: 80
+  port: 3306
 
 ingress:    
-  host: plex.le.local
+  host: mysql.le.local
   path: /
 
-  # resources:
-  #   limits:
-  #     cpu: 3000m
-  #     memory: 3Gi
-  #   requests:
-  #     cpu: 2000m
-  #     memory: 2Gi
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 640Mi
+    requests:
+      cpu: 100m
+      memory: 256Mi
