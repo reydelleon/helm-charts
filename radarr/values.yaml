@@ -27,7 +27,7 @@ service:
   port: 80
 
 ingress:    
-  host: radarr.le.local
+  host: radarr.leonmachado.com
   path: /
 
 resources:
@@ -40,4 +40,4 @@ resources:
     memory: 512Mi
   requests:
     cpu: 100m
-    memory: 128Mi
+    memory: 256Mi

@@ -27,7 +27,7 @@ service:
   port: 80
 
 ingress:    
-  host: sonarr.le.local
+  host: sonarr.leonmachado.com
   path: /
 
 resources:
