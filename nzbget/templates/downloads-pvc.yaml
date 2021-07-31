@@ -13,6 +13,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   hostPath:
     path: "/var/lib/media/plex-library/Downloads"
+
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim

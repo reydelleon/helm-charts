@@ -9,7 +9,7 @@ deploymentStrategy: Recreate
 image:
   repository: linuxserver/nzbget
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 probes:
   liveness:
