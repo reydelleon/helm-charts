@@ -33,5 +33,20 @@ service:
 ingress:
   ingressClassName: # nginx
   pathType: Prefix
-  host: nzbget.leonmachado.com
+  host: nzbget.local
   path: /
+
+persistence:
+  config:
+    storageClassName: manual
+    hostPath: /var/lib/.nzbget
+    mountPath: /config
+    reclaimPolicy: Retain
+    size: 1Mi
+
+  downloads:
+    storageClassName: manual
+    hostPath: /var/lib/media/downloads
+    mountPath: /downloads
+    reclaimPolicy: Retain
+    size: 50Gi

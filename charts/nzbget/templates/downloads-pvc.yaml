@@ -5,14 +5,14 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: manual
+  storageClassName: {{ .Values.persistence.downloads.storageClassName }}
   capacity:
-    storage: 500Gi
+    storage: {{ .Values.persistence.downloads.size }}
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
+  persistentVolumeReclaimPolicy: {{ .Values.persistence.downloads.reclaimPolicy }}
   hostPath:
-    path: "/var/lib/media/plex-library/Downloads"
+    path: {{ .Values.persistence.downloads.hostPath }}
 
 ---
 apiVersion: v1
@@ -20,9 +20,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: {{ template "nzbget.fullname" . }}-downloads-claim
 spec:
-  storageClassName: manual
+  storageClassName: {{ .Values.persistence.downloads.storageClassName }}
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 500Gi
+      storage: {{ .Values.persistence.downloads.size }}
