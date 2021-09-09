@@ -1,9 +1,10 @@
 replicaCount: 1
 
 service:
-  type: ClusterIP
-  port: 443
+  type: LoadBalancer
+  loadBalancerIp: 192.168.1.150
 
-ingress:    
-  host: cluster.littlelodge.local
+ingress:
+  enabled: true
+  host: cluster.leonmachado.com
   path: /

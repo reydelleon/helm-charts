@@ -6,6 +6,14 @@ replicaCount: 1
 
 deploymentStrategy: Recreate
 
+annotations:
+  telegraf.influxdata.com/class: infra
+  telegraf.influxdata.com/inputs:  |
+    [[inputs.mysql]]
+      servers = ["tcp://127.0.0.0:3306/"]
+      metric_version = 2
+      gather_process_list = true
+
 image:
   repository: linuxserver/mariadb
   tag: latest
@@ -24,7 +32,7 @@ probes:
 environment:
   puid: 1000
   pgid: 1000
-  rootPassword: rootPassword
+  rootPassword: somePassw0rd*
   timeZone: America/New York
 
 service:
@@ -32,7 +40,7 @@ service:
   port: 3306
 
 ingress:    
-  host: mysql.le.local
+  host: mysql.lonmachado.com
   path: /
 
   resources:
