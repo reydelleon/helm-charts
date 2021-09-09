@@ -5,23 +5,23 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: manual
+  storageClassName: {{ .Values.persistence.config.storageClassName }}
   capacity:
-    storage: 1Mi
+    storage: {{ .Values.persistence.config.size }}
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
+  persistentVolumeReclaimPolicy: {{ .Values.persistence.config.reclaimPolicy }}
   hostPath:
-    path: "/var/lib/.radarr"
+    path: {{ .Values.persistence.config.hostPath }}
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: {{ template "radarr.fullname" . }}-config-claim
 spec:
-  storageClassName: manual
+  storageClassName: {{ .Values.persistence.config.storageClassName }}
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1Mi
+      storage: {{ .Values.persistence.config.size }}

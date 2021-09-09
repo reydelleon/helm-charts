@@ -5,23 +5,23 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: manual
+  storageClassName: {{ .Values.persistence.media.storageClassName }}
   capacity:
-    storage: 500Gi
+    storage: {{ .Values.persistence.media.size }}
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
+  persistentVolumeReclaimPolicy: {{ .Values.persistence.media.reclaimPolicy }}
   hostPath:
-    path: "/var/lib/media/plex-library"
+    path: {{ .Values.persistence.media.hostPath }}
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: {{ template "radarr.fullname" . }}-media-claim
 spec:
-  storageClassName: manual
+  storageClassName: {{ .Values.persistence.media.storageClassName }}
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 500Gi
+      storage: {{ .Values.persistence.media.size }}

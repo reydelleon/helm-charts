@@ -8,7 +8,7 @@ deploymentStrategy: Recreate
 
 image:
   repository: linuxserver/nzbget
-  tag: version-v21.1
+  tag: latest
   pullPolicy: Always
 
 probes:

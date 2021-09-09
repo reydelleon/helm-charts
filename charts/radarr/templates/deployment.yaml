@@ -47,9 +47,9 @@ spec:
             failureThreshold: {{ .Values.probes.readiness.failureThreshold }}
             timeoutSeconds: {{ .Values.probes.readiness.timeoutSeconds }}
           volumeMounts:
-            - mountPath: /config
+            - mountPath: {{ .Values.persistence.config.mountPath }}
               name: config
-            - mountPath: /media
+            - mountPath: {{ .Values.persistence.media.mountPath }}
               name: media
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
