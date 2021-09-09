@@ -32,5 +32,6 @@ service:
 
 ingress:
   ingressClassName: # nginx
+  pathType: Prefix
   host: nzbget.leonmachado.com
   path: /
