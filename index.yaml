@@ -146,6 +146,16 @@ entries:
   nzbget:
   - apiVersion: v2
     appVersion: v21.1
+    created: "2021-09-09T18:21:05.044093994Z"
+    description: A client for UseNet downloads
+    digest: ec85ea8ff0f23c4fa29bc6af51876090d2de85d583a5ffc6b8e24adb56d6d72f
+    name: nzbget
+    type: application
+    urls:
+    - https://github.com/reydelleon/helm-charts/releases/download/nzbget-2.1.1/nzbget-2.1.1.tgz
+    version: 2.1.1
+  - apiVersion: v2
+    appVersion: v21.1
     created: "2021-09-09T18:12:16.640238046Z"
     description: A client for UseNet downloads
     digest: 9bdd97e5cc4e7dba0b90a53d4afb728bb51d3081be46b55b63a3c23b7a3cd8bb
@@ -310,4 +320,4 @@ entries:
     urls:
     - https://github.com/reydelleon/helm-charts/releases/download/telegraf-operator-1.2.4/telegraf-operator-1.2.4.tgz
     version: 1.2.4
-generated: "2021-09-09T18:12:16.640247447Z"
+generated: "2021-09-09T18:21:05.044284748Z"
