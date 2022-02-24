@@ -42,7 +42,7 @@ service:
 
 ingress:
   enabled: true
-  className: nginx
+  className: # nginx
   annotations: {}
   hosts:
     - host: teamcity.leonmachado.com
