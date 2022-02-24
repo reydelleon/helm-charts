@@ -37,14 +37,14 @@ spec:
             - name: http
               containerPort: 8111
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 8111
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 8111
+          # livenessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: 8111
+          # readinessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: 8111
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
