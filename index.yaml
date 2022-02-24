@@ -289,6 +289,16 @@ entries:
   teamcity:
   - apiVersion: v2
     appVersion: 2021.2.3
+    created: "2022-02-24T18:26:28.126136705Z"
+    description: A CI/CD tool
+    digest: 227905ecb0c838cc9b8c8c7806d7eb3844020dec511bd54451031f627989b2eb
+    name: teamcity
+    type: application
+    urls:
+    - https://github.com/reydelleon/helm-charts/releases/download/teamcity-0.6.0/teamcity-0.6.0.tgz
+    version: 0.6.0
+  - apiVersion: v2
+    appVersion: 2021.2.3
     created: "2022-02-24T18:18:22.403361269Z"
     description: A CI/CD tool
     digest: c4908c064d60681ae1b380ed0899245c99e1d1d9ce6ce8e5d706ef84baf62879
@@ -418,4 +428,4 @@ entries:
     urls:
     - https://github.com/reydelleon/helm-charts/releases/download/telegraf-operator-1.2.4/telegraf-operator-1.2.4.tgz
     version: 1.2.4
-generated: "2022-02-24T18:18:22.403396168Z"
+generated: "2022-02-24T18:26:28.126340705Z"
