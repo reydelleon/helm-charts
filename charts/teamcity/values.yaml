@@ -35,7 +35,7 @@ securityContext:
   # readOnlyRootFilesystem: true
   # runAsNonRoot: true
   runAsGroup: 0
-  runAsUser: 1000
+  runAsUser: 0
 
 ## Persist data to a persistent volume
 ##
