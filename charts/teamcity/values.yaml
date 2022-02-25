@@ -36,6 +36,26 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+## Persist data to a persistent volume
+##
+persistence:
+  enabled: true
+  ## If true will use an existing PVC instead of creating one
+  # useExisting: false
+  ## Name of existing PVC to be used in the teamcity deployment
+  # name:
+  ## influxdb data Persistent Volume Storage Class
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  storageClass: longhorn
+  accessMode: ReadWriteOnce
+  size: 5Gi
+  mountPath: /data/teamcity_server/datadir
+
 service:
   type: ClusterIP
   port: 80

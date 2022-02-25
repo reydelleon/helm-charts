@@ -45,8 +45,15 @@ spec:
           #   httpGet:
           #     path: /
           #     port: 8111
+          volumeMounts:
+            - mountPath: {{ .Values.persistence.mountPath }}
+              name: data
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: data
+          peristentVolumeClaim:
+            claimName: {{ template "teamcity.fullname" . }}-data-claim
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
