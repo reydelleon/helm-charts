@@ -52,7 +52,7 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
         - name: data
-          peristentVolumeClaim:
+          persistentVolumeClaim:
             claimName: {{ template "teamcity.fullname" . }}-data-claim
       {{- with .Values.nodeSelector }}
       nodeSelector:
