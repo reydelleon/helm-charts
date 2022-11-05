@@ -271,6 +271,23 @@ entries:
   sonarr:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2022-11-05T20:51:32.468659346Z"
+    description: A UseNet client to manage TV shows downloads
+    digest: 0de056154c4d08101ab1fcfc23111ac466ba5ba1076224fbb602ae898c78eec8
+    icon: https://avatars1.githubusercontent.com/u/1082903?s=400&v=4
+    maintainers:
+    - email: contact@reydelleon.me
+      name: Reydel Leon Machado
+    name: sonarr
+    sources:
+    - https://hub.docker.com/r/linuxserver/sonarr/
+    - https://sonarr.tv/
+    type: application
+    urls:
+    - https://github.com/reydelleon/helm-charts/releases/download/sonarr-3.0.0/sonarr-3.0.0.tgz
+    version: 3.0.0
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2021-09-09T17:45:12.308906505Z"
     description: A UseNet client to manage TV shows downloads
     digest: b392d56eb9faf35156d947acd02cb41873bcca6a0f0585f7b6115f414647cf5a
@@ -508,4 +525,4 @@ entries:
     urls:
     - https://github.com/reydelleon/helm-charts/releases/download/telegraf-operator-1.2.4/telegraf-operator-1.2.4.tgz
     version: 1.2.4
-generated: "2022-02-25T04:06:45.954946259Z"
+generated: "2022-11-05T20:51:32.469035243Z"
