@@ -217,6 +217,23 @@ entries:
     version: 0.1.0
   radarr:
   - apiVersion: v2
+    appVersion: 4.2.
+    created: "2022-11-11T19:32:58.095037223Z"
+    description: A UseNet client to manage movie downloads
+    digest: a52a45baae22450a28f1e60afc92f7839b0e56e640206e5b8200c17162dc7276
+    icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/radarr.png
+    maintainers:
+    - email: contact@reydelleon.me
+      name: Reydel Leon Machado
+    name: radarr
+    sources:
+    - https://hub.docker.com/r/linuxserver/radarr/
+    - https://radarr.video/
+    type: application
+    urls:
+    - https://github.com/reydelleon/helm-charts/releases/download/radarr-2.3.0/radarr-2.3.0.tgz
+    version: 2.3.0
+  - apiVersion: v2
     appVersion: 4.2.4
     created: "2022-11-11T18:54:33.759847075Z"
     description: A UseNet client to manage movie downloads
@@ -303,6 +320,23 @@ entries:
     - https://github.com/reydelleon/helm-charts/releases/download/sabnzbd-1.0.3/sabnzbd-1.0.3.tgz
     version: 1.0.3
   sonarr:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-11-11T19:32:58.207252679Z"
+    description: A UseNet client to manage TV shows downloads
+    digest: a93a58177fac637080dcf307a2af9b6409fe0ae57836ddc12dc06c7e242cc1ac
+    icon: https://avatars1.githubusercontent.com/u/1082903?s=400&v=4
+    maintainers:
+    - email: contact@reydelleon.me
+      name: Reydel Leon Machado
+    name: sonarr
+    sources:
+    - https://hub.docker.com/r/linuxserver/sonarr/
+    - https://sonarr.tv/
+    type: application
+    urls:
+    - https://github.com/reydelleon/helm-charts/releases/download/sonarr-3.4.0/sonarr-3.4.0.tgz
+    version: 3.4.0
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-11-11T19:12:38.562928619Z"
@@ -610,4 +644,4 @@ entries:
     urls:
     - https://github.com/reydelleon/helm-charts/releases/download/telegraf-operator-1.2.4/telegraf-operator-1.2.4.tgz
     version: 1.2.4
-generated: "2022-11-11T19:12:38.563013418Z"
+generated: "2022-11-11T19:32:58.207337278Z"
