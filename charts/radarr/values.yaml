@@ -34,7 +34,7 @@ ingress:
 
 persistence:
   config:
-    storageClassName: manual
+    storageClassName: microk8s-hostpath
     hostPath: /var/lib/.radarr
     mountPath: /config
     reclaimPolicy: Retain
