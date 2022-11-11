@@ -217,6 +217,23 @@ entries:
     version: 0.1.0
   radarr:
   - apiVersion: v2
+    appVersion: 4.2.0
+    created: "2022-11-11T19:41:41.071919259Z"
+    description: A UseNet client to manage movie downloads
+    digest: 127cbdb1ce9b8ad30b0decb0ed4508ccf811a418ccd9b56f380ae1bdbd0f89b6
+    icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/radarr.png
+    maintainers:
+    - email: contact@reydelleon.me
+      name: Reydel Leon Machado
+    name: radarr
+    sources:
+    - https://hub.docker.com/r/linuxserver/radarr/
+    - https://radarr.video/
+    type: application
+    urls:
+    - https://github.com/reydelleon/helm-charts/releases/download/radarr-2.4.0/radarr-2.4.0.tgz
+    version: 2.4.0
+  - apiVersion: v2
     appVersion: 4.2.
     created: "2022-11-11T19:32:58.095037223Z"
     description: A UseNet client to manage movie downloads
@@ -644,4 +661,4 @@ entries:
     urls:
     - https://github.com/reydelleon/helm-charts/releases/download/telegraf-operator-1.2.4/telegraf-operator-1.2.4.tgz
     version: 1.2.4
-generated: "2022-11-11T19:32:58.207337278Z"
+generated: "2022-11-11T19:41:41.078714093Z"
