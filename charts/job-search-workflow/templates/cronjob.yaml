@@ -1,0 +1,56 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ include "job-search-workflow.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "job-search-workflow.labels" . | nindent 4 }}
+spec:
+  schedule: {{ .Values.jobSearch.schedule | quote }}
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            {{- include "job-search-workflow.labels" . | nindent 12 }}
+            app.kubernetes.io/component: cronjob
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: job-search
+              image: "{{ .Values.jobSearch.image.repository }}:{{ .Values.jobSearch.image.tag }}"
+              env:
+                - name: MCP_SERVER_URL
+                  value: "http://{{ include "job-search-workflow.fullname" . }}-linkedin-mcp:8080/mcp"
+                - name: CONFIG_PATH
+                  value: /config/config.yaml
+                - name: CRITERIA_PATH
+                  value: /config/criteria.md
+                - name: DB_PATH
+                  value: /data/jobs.db
+              envFrom:
+                - secretRef:
+                    name: {{ .Values.secretName }}
+              volumeMounts:
+                - name: data
+                  mountPath: /data
+                - name: config
+                  mountPath: /config
+                  readOnly: true
+              resources:
+                requests:
+                  memory: "128Mi"
+                  cpu: "100m"
+                limits:
+                  memory: "256Mi"
+                  cpu: "250m"
+          volumes:
+            - name: data
+              persistentVolumeClaim:
+                claimName: {{ include "job-search-workflow.fullname" . }}-data
+            - name: config
+              configMap:
+                name: {{ include "job-search-workflow.fullname" . }}-config

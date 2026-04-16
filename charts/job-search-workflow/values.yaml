@@ -1,0 +1,85 @@
+linkedinMcp:
+  image:
+    repository: stickerdaniel/linkedin-mcp-server
+    tag: "latest"
+  persistence:
+    storageClass: longhorn
+    size: 1Gi
+
+jobSearch:
+  image:
+    # Build from job-search-workflow repo and push here
+    repository: ghcr.io/reydelleon/job-search-workflow
+    tag: "latest"
+  # Cron schedule — default: 8 AM on weekdays (America/New_York)
+  schedule: "0 13 * * 1-5"
+  persistence:
+    storageClass: longhorn
+    size: 1Gi
+
+# Name of the Kubernetes Secret that must exist in the namespace before deploying.
+# Required keys: OPENAI_API_KEY, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+secretName: job-search-secrets
+
+# config.yaml contents — mounted into the CronJob as a file
+config: |
+  search:
+    queries:
+      - query: "Staff Software Engineer"
+        location: "United States"
+      - query: "Principal Software Engineer"
+        location: "United States"
+      - query: "Senior Software Engineer"
+        location: "United States"
+    results_per_query: 25
+  filters:
+    required_title_keywords: []
+    blocked_title_keywords: []
+    blocked_description_keywords:
+      - "on-site"
+    blocked_companies: []
+    min_salary: 160000
+    max_salary: null
+    require_remote: false
+  openai:
+    model: "gpt-4o-mini"
+    notification_threshold: 7
+  telegram:
+    max_jobs_per_message: 10
+
+# criteria.md contents — mounted into the CronJob as a file
+criteria: |
+  # Job Fit Criteria
+
+  Use this rubric to score jobs on a scale of 1–10.
+  A score of 7 or above triggers a notification.
+
+  ## Strong positive signals (raises score)
+
+  - Primary stack is .NET/C# (any version)
+  - React front-end work alongside .NET backend
+  - Role is Staff, Principal, or Senior IC (individual contributor track)
+  - Architect-level IC role (software architect on IC track)
+  - Explicitly remote-first or fully remote
+  - Hybrid in Louisville, KY area
+  - Salary range at or above $160K when listed
+  - Distributed systems, platform engineering, or technical leadership emphasis
+
+  ## Neutral / acceptable
+
+  - Some TypeScript/JavaScript as a minor part of a .NET-primary stack
+  - Hybrid arrangement without location specified (score neutrally, flag in notification)
+  - Salary not listed (do not penalize)
+
+  ## Negative signals (lowers score)
+
+  - Stack is primarily Java, Ruby, PHP, or Python (not .NET)
+  - Salary listed below $120K
+  - Vague or generic job description with no meaningful technical detail
+
+  ## Automatic disqualifiers (score 1)
+
+  - Requires proficiency in Python, C++, Go, or Kotlin as the primary language
+  - Role is purely Rust, JavaScript/TypeScript, or Node.js with no .NET component
+  - Requires onsite presence (not remote or hybrid)
+  - Requires relocation to a specific city outside Louisville KY
