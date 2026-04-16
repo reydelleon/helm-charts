@@ -20,6 +20,13 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name }}
         app.kubernetes.io/component: linkedin-mcp
     spec:
+      initContainers:
+        - name: fix-permissions
+          image: busybox
+          command: ['sh', '-c', 'chown -R 1000:1000 /home/pwuser/.linkedin-mcp']
+          volumeMounts:
+            - name: linkedin-profile
+              mountPath: /home/pwuser/.linkedin-mcp
       containers:
         - name: linkedin-mcp
           image: "{{ .Values.linkedinMcp.image.repository }}:{{ .Values.linkedinMcp.image.tag }}"
