@@ -53,6 +53,17 @@ entries:
     urls:
     - https://github.com/reydelleon/helm-charts/releases/download/influxdb2-2.0.4/influxdb2-2.0.4.tgz
     version: 2.0.4
+  job-search-workflow:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2026-04-16T20:30:10.385613176Z"
+    description: Automated LinkedIn job search, filtering, and fit analysis via AI
+    digest: ea61790c1e6d4113471315ffbda9c566e8eb3190ac9f97438401177548e94c5d
+    name: job-search-workflow
+    type: application
+    urls:
+    - https://github.com/reydelleon/helm-charts/releases/download/job-search-workflow-0.1.0/job-search-workflow-0.1.0.tgz
+    version: 0.1.0
   kapacitor:
   - apiVersion: v1
     appVersion: 1.5.9
@@ -688,4 +699,4 @@ entries:
     urls:
     - https://github.com/reydelleon/helm-charts/releases/download/telegraf-operator-1.2.4/telegraf-operator-1.2.4.tgz
     version: 1.2.4
-generated: "2022-11-11T20:27:41.741975688Z"
+generated: "2026-04-16T20:30:10.385755491Z"
