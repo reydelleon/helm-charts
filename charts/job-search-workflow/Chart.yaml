@@ -2,5 +2,5 @@ apiVersion: v2
 name: job-search-workflow
 description: Automated LinkedIn job search, filtering, and fit analysis via AI
 type: application
-version: 0.6.0
+version: 0.7.0
 appVersion: "0.1.0"
