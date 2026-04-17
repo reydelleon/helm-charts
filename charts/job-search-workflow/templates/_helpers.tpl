@@ -10,4 +10,6 @@
 app.kubernetes.io/name: {{ include "job-search-workflow.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
+app.kubernetes.io/version: {{ .Values.jobSearch.image.tag | quote }}
+helm.sh/chart: {{ printf "%s-%s" .Chart.Name .Chart.Version }}
 {{- end }}
