@@ -19,6 +19,8 @@ spec:
             app.kubernetes.io/component: cronjob
         spec:
           restartPolicy: OnFailure
+          imagePullSecrets:
+            - name: {{ .Values.imagePullSecretName }}
           containers:
             - name: job-search
               image: "{{ .Values.jobSearch.image.repository }}:{{ .Values.jobSearch.image.tag }}"

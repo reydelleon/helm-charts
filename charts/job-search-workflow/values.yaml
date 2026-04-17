@@ -21,6 +21,13 @@ jobSearch:
 # Required keys: OPENAI_API_KEY, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 secretName: job-search-secrets
 
+# Name of the docker-registry secret for pulling ghcr.io/reydelleon/job-search-workflow.
+# Create with:
+#   kubectl create secret docker-registry ghcr-pull-secret \
+#     --docker-server=ghcr.io --docker-username=reydelleon \
+#     --docker-password=<github-pat-read-packages> -n job-search
+imagePullSecretName: ghcr-pull-secret
+
 # config.yaml contents — mounted into the CronJob as a file
 config: |
   search:
