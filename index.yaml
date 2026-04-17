@@ -56,6 +56,16 @@ entries:
   job-search-workflow:
   - apiVersion: v2
     appVersion: 0.1.0
+    created: "2026-04-17T02:24:59.020354088Z"
+    description: Automated LinkedIn job search, filtering, and fit analysis via AI
+    digest: 43f206942dde5368fe0e71f6d2f63d4b769da822d175d1cbbd2df4121f72358d
+    name: job-search-workflow
+    type: application
+    urls:
+    - https://github.com/reydelleon/helm-charts/releases/download/job-search-workflow-0.6.0/job-search-workflow-0.6.0.tgz
+    version: 0.6.0
+  - apiVersion: v2
+    appVersion: 0.1.0
     created: "2026-04-17T02:08:23.696044243Z"
     description: Automated LinkedIn job search, filtering, and fit analysis via AI
     digest: e53075c71e70dbe7636cc1b50ba83d08e140050d8c5c773443b16c367bcd2b69
@@ -739,4 +749,4 @@ entries:
     urls:
     - https://github.com/reydelleon/helm-charts/releases/download/telegraf-operator-1.2.4/telegraf-operator-1.2.4.tgz
     version: 1.2.4
-generated: "2026-04-17T02:08:23.696159268Z"
+generated: "2026-04-17T02:24:59.020494282Z"
