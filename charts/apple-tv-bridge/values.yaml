@@ -1,0 +1,51 @@
+image:
+  repository: ghcr.io/reydelleon/apple-tv-bridge
+  tag: latest
+  digest: ""
+  pullPolicy: Always
+imagePullSecrets:
+  - name: ghcr-pull-secret
+
+# Optional externally managed Secret key "password" overrides the generated /data/admin.json.
+adminPasswordSecret: ""
+ingress:
+  enabled: false
+  className: nginx
+  annotations: {}
+  host: apple-tv-bridge.leonmachado.com
+  tlsSecretName: ""
+
+# mDNS discovery requires LAN multicast. Only one replica owns device connections.
+hostNetwork: true
+tcpPort: 6970
+healthPort: 6971
+service:
+  type: LoadBalancer
+  annotations: {}
+  # Set to the CP3's CIDR when source addresses are preserved by the LAN/CNI.
+  loadBalancerSourceRanges: []
+
+persistence:
+  existingClaim: ""
+  storageClass: longhorn
+  size: 1Gi
+
+config:
+  auto_discover: true
+  scan_seconds: 5
+  discovery_interval: 30
+  poll_interval: 15
+  command_timeout: 5
+  heartbeat_interval: 10
+  max_clients: 8
+  allowed_clients: []
+  devices: []
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 128Mi
+  limits:
+    memory: 512Mi
+nodeSelector: {}
+tolerations: []

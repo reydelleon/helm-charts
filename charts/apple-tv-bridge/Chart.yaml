@@ -1,0 +1,6 @@
+apiVersion: v2
+name: apple-tv-bridge
+description: Apple TV discovery, pairing and confirmed playback feedback for Crestron
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

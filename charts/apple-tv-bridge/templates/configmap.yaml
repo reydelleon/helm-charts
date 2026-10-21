@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-config
+data:
+  config.json: |
+    {{- mergeOverwrite (deepCopy .Values.config) (dict "bind" "0.0.0.0" "port" .Values.tcpPort "health_port" .Values.healthPort "data_dir" "/data") | toPrettyJson | nindent 4 }}
