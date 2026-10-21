@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  apple-tv-bridge:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2026-10-21T03:53:34.889631809Z"
+    description: Apple TV discovery, pairing and confirmed playback feedback for Crestron
+    digest: b0bee32a23b7abb83ccd0ae6fac9fb8f04924d8d3b3ad7f109400834b805dc43
+    name: apple-tv-bridge
+    type: application
+    urls:
+    - https://github.com/reydelleon/helm-charts/releases/download/apple-tv-bridge-0.1.0/apple-tv-bridge-0.1.0.tgz
+    version: 0.1.0
   chronograf:
   - apiVersion: v1
     appVersion: 1.8.9.1
@@ -779,4 +790,4 @@ entries:
     urls:
     - https://github.com/reydelleon/helm-charts/releases/download/telegraf-operator-1.2.4/telegraf-operator-1.2.4.tgz
     version: 1.2.4
-generated: "2026-04-17T14:49:36.252461999Z"
+generated: "2026-10-21T03:53:34.889956607Z"
